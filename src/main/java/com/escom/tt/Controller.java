@@ -5,6 +5,7 @@ import com.escom.tt.domain.Patada;
 import com.escom.tt.domain.Usuario;
 import com.escom.tt.repository.PatadaRepository;
 import com.escom.tt.repository.UsuarioRepository;
+import java.sql.Timestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +42,7 @@ public class Controller {
         
         try {
             Usuario u = usuarioRepository.findById(patada.getUsuario().getId()).get();
+            patada.setTimeStamp(new Timestamp(System.currentTimeMillis()));
             patadaRepository.save(patada);
             return new ResponseEntity<>("Patada registrada correctamente",HttpStatus.OK);
         } catch (Exception e) {
