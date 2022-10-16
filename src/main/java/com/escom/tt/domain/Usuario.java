@@ -33,7 +33,7 @@ public class Usuario implements Serializable{
     @Column
     String contrasena;
     
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     List<Patada> patadas;
     
 }

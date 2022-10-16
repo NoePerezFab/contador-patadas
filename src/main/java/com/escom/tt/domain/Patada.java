@@ -35,7 +35,7 @@ public class Patada implements Serializable{
     @Column
     Double intensidad;
  
-    @Column
-    @JoinColumn(name = "usuario", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "usuario_id",nullable = false)
     Usuario usuario;
 }
