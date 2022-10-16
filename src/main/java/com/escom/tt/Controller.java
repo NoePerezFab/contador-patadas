@@ -3,6 +3,7 @@ package com.escom.tt;
 
 import com.escom.tt.domain.Patada;
 import com.escom.tt.domain.Usuario;
+import com.escom.tt.repository.PatadaRepository;
 import com.escom.tt.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,9 @@ public class Controller {
     
     @Autowired
     UsuarioRepository usuarioRepository;
+    
+    @Autowired
+    PatadaRepository patadaRepository;
     
     @PostMapping(value = "/add-usuario")
     public ResponseEntity<?> addUsuario(@RequestBody Usuario usuario){
@@ -37,8 +41,7 @@ public class Controller {
         
         try {
             Usuario u = usuarioRepository.findById(patada.getId()).get();
-            u.getPatadas().add(patada);
-            usuarioRepository.save(u);
+            patadaRepository.save(patada);
             return new ResponseEntity<>("Patada registrada correctamente",HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
