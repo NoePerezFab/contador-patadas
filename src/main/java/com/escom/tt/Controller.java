@@ -21,6 +21,8 @@ public class Controller {
     @Autowired
     UsuarioRepository usuarioRepository;
     
+    @Autowired
+    PatadaRepository patadaRepository;
     
     @PostMapping(value = "/add-usuario")
     public ResponseEntity<?> addUsuario(@RequestBody Usuario usuario){
@@ -39,8 +41,7 @@ public class Controller {
         
         try {
             Usuario u = usuarioRepository.findById(patada.getUsuario().getId()).get();
-            u.getPatadas().add(patada);
-            usuarioRepository.save(u);
+            patadaRepository.save(patada);
             return new ResponseEntity<>("Patada registrada correctamente",HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
