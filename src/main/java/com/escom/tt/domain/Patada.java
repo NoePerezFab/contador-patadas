@@ -34,6 +34,6 @@ public class Patada implements Serializable{
     @Column
     Double intensidad;
  
-    @OneToOne
+    @Column
     Usuario usuario;
 }
