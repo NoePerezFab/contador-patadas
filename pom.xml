@@ -12,6 +12,9 @@
 	<artifactId>tt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tt</name>
+
+	<packaging>${packaging.type}</packaging>
+
 	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 	<properties>
 		<java.version>11</java.version>
