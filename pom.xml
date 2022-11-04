@@ -96,6 +96,7 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <configuration>
                             <outputDirectory>${tomcat.directory}</outputDirectory>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
                         </configuration>
                     </plugin>
 				</plugins>
