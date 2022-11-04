@@ -15,6 +15,7 @@
 	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 	<properties>
 		<java.version>11</java.version>
+		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,5 +65,46 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>provided</scope>
+                </dependency>
+			</dependencies>
+			<build>
+				<finalName>contador-patadas</finalName>
+				<plugins>
+					<plugin>
+						<artifactId>maven-clean-plugin</artifactId>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>target/www/</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+					</plugin>
+					<plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <warSourceDirectory>target/www/</warSourceDirectory>
+                            <webXml>${project.basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                            <outputDirectory>${tomcat.directory}</outputDirectory>
+                        </configuration>
+                    </plugin>
+				</plugins>
+			</build>
+			<properties>
+                <packaging.type>war</packaging.type>
+                <logback.loglevel>DEBUG</logback.loglevel>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+		</profile>
+	</profiles>
 
 </project>
