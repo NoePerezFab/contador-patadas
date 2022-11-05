@@ -1,5 +1,5 @@
 
-package com.escom.tt;
+package com.escom.tt.controller;
 
 import com.escom.tt.domain.Patada;
 import com.escom.tt.domain.Usuario;
