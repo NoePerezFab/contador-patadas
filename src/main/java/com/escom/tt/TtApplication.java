@@ -25,5 +25,5 @@ public class TtApplication {
         return super.run(application);
     }
     
-    private static Class<ErppApplication> applicationClass = TtApplication.class;
+    private static Class<TtApplication> applicationClass = TtApplication.class;
 }
