@@ -18,6 +18,7 @@
 
 
 	<properties>
+            <spring-boot.version>2.7.4</spring-boot.version>
 		<java.version>11</java.version>
 		<start-class>com.escom.tt.TtApplication</start-class>
 		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
@@ -95,6 +96,22 @@
 					</excludes>
 				</configuration>
 			</plugin>
+                        <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <mainClass>${start-class}</mainClass>
+                        <classifier>exec</classifier>
+                        <excludeDevtools>true</excludeDevtools>
+                        <jvmArguments>
+                            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+                        </jvmArguments>
+                        <arguments>
+                            <argument>--spring.profiles.active=dev</argument>
+                        </arguments>
+                    </configuration>
+                </plugin>
 		</plugins>
 	</build>
 	<profiles>
