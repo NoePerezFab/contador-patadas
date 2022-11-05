@@ -11,7 +11,6 @@
 	<groupId>com.escom</groupId>
 	<artifactId>tt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<start-class>com.escom.tt.TtAplication</start-class>
 	<name>tt</name>
 
 	<packaging>${packaging.type}</packaging>
@@ -19,6 +18,7 @@
 	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 	<properties>
 		<java.version>11</java.version>
+		<start-class>com.escom.tt.TtAplication</start-class>
 		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
 	</properties>
 	<dependencies>
