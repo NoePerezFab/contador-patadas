@@ -16,6 +16,7 @@
 
 	<packaging>${packaging.type}</packaging>
 
+
 	<properties>
 		<java.version>11</java.version>
 		<start-class>com.escom.tt.TtApplication</start-class>
@@ -77,6 +78,16 @@
 		</plugins>
 	</build>
 	<profiles>
+            <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <packaging.type>jar</packaging.type>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+            </profile>
 		<profile>
 			<id>prod</id>
 			<dependencies>
