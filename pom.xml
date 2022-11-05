@@ -22,7 +22,7 @@
 		<java.version>11</java.version>
 		<start-class>com.escom.tt.TtApplication</start-class>
 		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
-                <project.build.sourceEncoding>project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
