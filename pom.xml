@@ -22,6 +22,7 @@
 		<java.version>11</java.version>
 		<start-class>com.escom.tt.TtApplication</start-class>
 		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
+                <project.build.sourceEncoding>project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -110,6 +111,16 @@
                         <arguments>
                             <argument>--spring.profiles.active=dev</argument>
                         </arguments>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <useIncrementalCompilation>false</useIncrementalCompilation>
                     </configuration>
                 </plugin>
 		</plugins>
