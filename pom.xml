@@ -8,9 +8,9 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.escom</groupId>
+	<groupId>com.escom.tt</groupId>
 	<artifactId>tt</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>tt</name>
 
 	<packaging>${packaging.type}</packaging>
@@ -18,7 +18,7 @@
 	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 	<properties>
 		<java.version>11</java.version>
-		<start-class>com.escom.tt.TtAplication</start-class>
+		<start-class>com.escom.tt.TtApplication</start-class>
 		<tomcat.directory>/var/lib/tomcat9/webapps/</tomcat.directory>
 	</properties>
 	<dependencies>
