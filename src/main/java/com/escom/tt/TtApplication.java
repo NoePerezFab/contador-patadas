@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootApplication
-public class TtApplication {
+public class TtApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TtApplication.class, args);
