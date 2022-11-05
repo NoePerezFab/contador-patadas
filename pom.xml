@@ -12,10 +12,10 @@
 	<artifactId>tt</artifactId>
 	<version>0.0.1</version>
 	<name>tt</name>
+	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 
 	<packaging>${packaging.type}</packaging>
 
-	<description>Proyeto de trabajo terminal, que consiste en contar las patadas de un atleta de tekwondo en un periodo de tiempo</description>
 	<properties>
 		<java.version>11</java.version>
 		<start-class>com.escom.tt.TtApplication</start-class>
