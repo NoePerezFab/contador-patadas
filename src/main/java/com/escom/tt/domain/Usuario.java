@@ -34,6 +34,6 @@ public class Usuario implements Serializable{
     String contrasena;
     
     @OneToMany(mappedBy = "usuario")
-    List<Patada> patadas;
+    List<Rutina> rutinas;
     
 }
