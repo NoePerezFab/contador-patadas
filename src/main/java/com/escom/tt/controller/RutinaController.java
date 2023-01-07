@@ -38,6 +38,7 @@ public class RutinaController {
     
     @Autowired
     private PatadaRepository patadaRepository;
+    
 
     @PostMapping(value = "/nueva")
     public ResponseEntity<?> createRutina(@RequestBody Rutina rutina){
