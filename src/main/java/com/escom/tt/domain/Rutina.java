@@ -33,6 +33,9 @@ public class Rutina implements Serializable{
     @Column
     private Double tiempo;
     
+    @Column
+    private Double tiempoEnvio;
+    
     @ManyToOne
     @JoinColumn(name = "usuario_id",nullable = false)
     Usuario usuario;
