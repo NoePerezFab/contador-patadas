@@ -51,6 +51,8 @@ public class RutinaController {
             usuario = optionalUsuario.get();
             rutina.setUsuario(usuario);
             rutina.setFecha(LocalDate.now());
+            rutina.setTiempo(rutina.getTiempo()*1000.00);
+            rutina.setTiempoEnvio(rutina.getTiempoEnvio()*1000.00);
              rutina = rutinaRepository.save(rutina);
              this.template.convertAndSend("/call/message/"+rutina.getUsuario().getId(),rutina);
              return new ResponseEntity<>(rutina,HttpStatus.OK);
