@@ -69,10 +69,15 @@ public class RutinaController {
             if(rutinaOptional.isEmpty()){
                 return new ResponseEntity<>("No se encontro la rutina",HttpStatus.OK);
             }
-            patadas.forEach(p -> {
-                patadaRepository.save(p);
-            });
             Rutina rutina = rutinaOptional.get();
+            for(Patada p : patadas){
+               p.setRutina(rutina);
+                patadaRepository.save(p); 
+            }
+                
+   
+            rutinaOptional = rutinaRepository.findById(idRutina);
+            rutina = rutinaOptional.get();
             this.template.convertAndSend("/call/grafica/"+idRutina,rutina);
             return new ResponseEntity<>("Patadas registradas correctamente",HttpStatus.OK);
         } catch (Exception e) {
