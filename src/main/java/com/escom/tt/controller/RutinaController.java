@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -86,6 +87,15 @@ public class RutinaController {
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         } 
+    }
+    
+    @GetMapping(value = "/rutina-usuario/{idUsuario}")
+    public ResponseEntity<?> getRutinasUsuario(@PathVariable("idUsuario") Long idUsuario) {
+        try {
+            return new ResponseEntity<>(rutinaRepository.findAllByUsuarioId(idUsuario),HttpStatus.OK);
+        } catch (Exception e) {
+             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }
