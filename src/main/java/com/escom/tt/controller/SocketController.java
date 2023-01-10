@@ -14,6 +14,7 @@ public class SocketController {
 @SendTo("/topic/greetings")
 
 public String greeting(@Payload String message) throws Exception {
+    System.out.println(message);
 
 Thread.sleep(1000); // simulated delay
 

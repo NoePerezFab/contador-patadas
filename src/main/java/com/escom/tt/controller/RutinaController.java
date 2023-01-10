@@ -13,6 +13,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -65,6 +66,8 @@ public class RutinaController {
     @PutMapping(value = "/add-patadas/{rutina}")
     public ResponseEntity<?> addPatadas( @RequestBody List<Patada> patadas, @PathVariable("rutina") Long idRutina) {
         try {
+            System.out.println(idRutina);
+            System.out.println(patadas.size());
             Optional<Rutina> rutinaOptional = rutinaRepository.findById(idRutina);
             if(rutinaOptional.isEmpty()){
                 return new ResponseEntity<>("No se encontro la rutina",HttpStatus.OK);

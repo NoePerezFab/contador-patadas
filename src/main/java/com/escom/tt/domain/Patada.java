@@ -1,6 +1,7 @@
 
 package com.escom.tt.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import javax.persistence.Column;
@@ -34,5 +35,6 @@ public class Patada implements Serializable{
     
     @ManyToOne
     @JoinColumn(name = "rutina_id",nullable = false)
+    @JsonIgnore
     private Rutina rutina;
 }
