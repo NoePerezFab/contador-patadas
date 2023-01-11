@@ -2,6 +2,7 @@ package com.escom.tt.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -41,7 +42,7 @@ public class Rutina implements Serializable{
     Usuario usuario;
     
     @Column
-    private LocalDate fecha;
+    private LocalDateTime fecha;
 
     @OneToMany(mappedBy = "rutina")
     List<Patada> patadas;

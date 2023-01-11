@@ -8,6 +8,7 @@ import com.escom.tt.repository.PatadaRepository;
 import com.escom.tt.repository.RutinaRepository;
 import com.escom.tt.repository.UsuarioRepository;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class RutinaController {
             }
             usuario = optionalUsuario.get();
             rutina.setUsuario(usuario);
-            rutina.setFecha(LocalDate.now());
+            rutina.setFecha(LocalDate.now().atTime(LocalTime.now()));
             rutina.setTiempo(rutina.getTiempo()*1000.00);
             rutina.setTiempoEnvio(rutina.getTiempoEnvio()*1000.00);
              rutina = rutinaRepository.save(rutina);
